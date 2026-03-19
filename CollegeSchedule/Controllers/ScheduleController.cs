@@ -1,4 +1,5 @@
 ﻿using CollegeSchedule.Data;
+using CollegeSchedule.DTO;
 using CollegeSchedule.Models;
 using CollegeSchedule.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,12 @@ namespace CollegeSchedule.Controllers
         {
             var result = await _service.GetScheduleForGroup(groupName, start.Date, end.Date);
             return Ok(result);  
+        }
+        [HttpGet("groups")]
+        public async Task<ActionResult<List<GroupDto>>> GetAllGroups()
+        {
+            var groups = await _service.GetAllGroupsAsync();
+            return Ok(groups);
         }
     }
 
