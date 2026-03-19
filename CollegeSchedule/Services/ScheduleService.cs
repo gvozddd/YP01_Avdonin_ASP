@@ -49,7 +49,7 @@ namespace CollegeSchedule.Services
             .ThenBy(s => s.GroupPart)
             .ToListAsync();
         }
-        private static List<ScheduleByDateDto> BuildScheduleDto(DateTime startDate,DateTime endDate, List<Schedule> schedules)
+        private static List<ScheduleByDateDto>BuildScheduleDto(DateTime startDate,DateTime endDate, List<Schedule> schedules)
         {
             var scheduleByDate = GroupSchedulesByDate(schedules);
             var result = new List<ScheduleByDateDto>();
