@@ -17,7 +17,7 @@ namespace CollegeSchedule.Services
             ValidateDates(startDate, endDate);
             var group = await GetGroupByName(groupName);
             var schedules = await LoadSchedules(group.GroupId, startDate, endDate);
-            return BuildScheduleDto(schedules);
+            return BuildScheduleDto(startDate, endDate, schedules);
         }
         private static void ValidateDates(DateTime start, DateTime end)
         {
