@@ -73,7 +73,7 @@ namespace CollegeSchedule.Services
             var lessonDto = new LessonDto
             {
                 LessonNumber = lessonGroup.Key.LessonNumber,
-                Time = $"{lessonGroup.Key.TimeStart:hh\\:mm}- { lessonGroup.Key.TimeEnd:hh\\:mm}",
+                Time = $"{lessonGroup.Key.TimeStart:HH\\:mm}-{lessonGroup.Key.TimeEnd:HH\\:mm}",
                 GroupParts = new Dictionary<LessonGroupPart, LessonPartDto?>()
             };
             foreach (var part in lessonGroup)
